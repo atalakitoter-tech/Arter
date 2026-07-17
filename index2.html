@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ártér</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:#f8f8f4;
+    color:#2d352d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:24px;
+}
+
+.card{
+    background:white;
+    max-width:520px;
+    width:100%;
+    padding:48px 40px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+h1{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+hr{
+    border:none;
+    border-top:1px solid #dde2d8;
+    margin:28px 0;
+}
+
+p{
+    line-height:1.7;
+    margin-bottom:18px;
+}
+
+.checkbox{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin:30px 0;
+}
+
+.checkbox input{
+    margin-top:4px;
+    transform:scale(1.2);
+}
+
+a{
+    color:#2f6f49;
+}
+
+button{
+    width:100%;
+    border:none;
+    border-radius:12px;
+    background:#3d6f4d;
+    color:white;
+    font-size:18px;
+    padding:18px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+button:hover{
+    background:#2f5d3d;
+}
+
+button:disabled{
+    background:#b8c2b8;
+    cursor:not-allowed;
+}
+
+footer{
+    text-align:center;
+    color:#777;
+    font-size:14px;
+    margin-top:28px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Ártér</h1>
+
+<p>
+Maradj kapcsolatban velünk!
+</p>
+
+<p>
+Ha szeretnél feliratkozni levelezőlistánkra,
+kérjük fogadd el az adatkezelési tájékoztatót.
+</p>
+
+<hr>
+
+<div class="checkbox">
+
+<input id="accept" type="checkbox">
+
+<label for="accept">
+Elfogadom az
+<a href="#" target="_blank">
+adatkezelési tájékoztatót
+</a>.
+</label>
+
+</div>
+
+<button id="join" disabled>
+Feliratkozom
+</button>
+
+<footer>
+A feliratkozás a Google Groups felületén történik.
+</footer>
+
+</div>
+
+<script>
+
+const checkbox=document.getElementById("accept");
+const button=document.getElementById("join");
+
+checkbox.addEventListener("change",()=>{
+button.disabled=!checkbox.checked;
+});
+
+button.onclick=()=>{
+
+window.location.href="https://groups.google.com/g/arterviadukt";
+
+};
+
+</script>
+
+</body>
+</html>
